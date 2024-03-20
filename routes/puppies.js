@@ -5,6 +5,7 @@ const router = Router()
 
 //  ======= Public Routes =========
 router.post('/', puppiesCtrl.create)
+router.get('/', puppiesCtrl.index)
 
 export {
   router 
