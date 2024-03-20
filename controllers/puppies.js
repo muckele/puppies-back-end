@@ -20,8 +20,19 @@ async function index(req, res) {
   }
 }
 
+async function deletePuppy(req, res) {
+  try {
+    const puppy = await Puppy.findByIdAndDelete(req.params.puppyId)
+    res.json(puppy)
+  } catch (err) {
+    console.log(err)
+    res.json(err)
+  }
+}
+
 export {
   create,
-  index
+  index,
+  deletePuppy as delete,
 
 }
